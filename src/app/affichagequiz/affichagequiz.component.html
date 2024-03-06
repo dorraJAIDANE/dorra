@@ -1,0 +1,26 @@
+<div class="container">
+  <div *ngFor="let quiz of quizzes" class="panel">
+    <div class="ring">
+      <div class="card card1"></div>
+      <div class="border">
+        <p class="title">{{ quiz.titre }}</p>
+        <div class="slide">
+          <h6 class="para">{{ quiz.description }}</h6>
+          <div class="line">
+            <h6 class="para">Date: {{ quiz.dateQuiz }}</h6>
+          </div>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngFor="let quiz of quizzes" >
+    <p class="title">{{ quiz.titre }}</p>
+    <h6 >{{ quiz.description }}</h6>
+    <h6 >Date: {{ quiz.dateQuiz }}</h6>
+    <button class="btn bg-sucess" (click)=viewQuestions(quiz.id_quiz)  routerLink="/Affichagequestion/{{quiz.id_quiz}}" >View Questions</button>
+  
+  
+  </div>
+</div>
+

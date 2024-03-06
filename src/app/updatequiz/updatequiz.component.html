@@ -1,0 +1,14 @@
+<div class="container">
+    <div *ngFor="let quiz of quizzes" class="panel">
+      <div class="ring">
+        <div class="card card{{ quiz.id_quiz }}"></div>
+        <div class="border">
+          <input type="text" [(ngModel)]="quiz.titre" class="title">
+          
+          <input type="date" [(ngModel)]="quiz.dateQuiz" class="date">
+        </div>
+      </div>
+      <button (click)="updateQuiz(quiz)">Mettre à jour ce quiz</button>
+    </div>
+  </div>
+  

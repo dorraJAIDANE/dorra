@@ -1,0 +1,16 @@
+<div *ngIf="questions.length > 0 && currentQuestionIndex < questions.length">
+  <h2>{{ quizTitle }}</h2>
+  <h3>{{ questions[currentQuestionIndex].content }}</h3>
+  <ul>
+    <li *ngFor="let option of [questions[currentQuestionIndex].option1, questions[currentQuestionIndex].option2, questions[currentQuestionIndex].option3, questions[currentQuestionIndex].option4]">
+      <label>
+        <input type="radio" [value]="option" [(ngModel)]="questions[currentQuestionIndex].selected_answer">
+        {{ option }}
+      </label>
+    </li>
+  </ul>
+  <button  (click)="submitAnswer(questions[currentQuestionIndex].selected_answer)">Next</button>
+</div>
+<div *ngIf="currentQuestionIndex >= questions.length">
+  <p>End of the quiz</p>
+</div>
